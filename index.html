@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AMIR</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:#06070c;
+overflow-x:hidden;
+color:white;
+
+}
+
+body::before{
+
+content:'';
+
+position:fixed;
+
+width:700px;
+height:700px;
+
+background:#7d2cff;
+
+filter:blur(180px);
+
+opacity:.18;
+
+top:-250px;
+left:-250px;
+
+animation:move1 12s infinite alternate;
+
+z-index:-2;
+
+}
+
+body::after{
+
+content:'';
+
+position:fixed;
+
+width:600px;
+height:600px;
+
+background:#00bfff;
+
+filter:blur(180px);
+
+opacity:.15;
+
+bottom:-250px;
+right:-250px;
+
+animation:move2 14s infinite alternate;
+
+z-index:-2;
+
+}
+
+@keyframes move1{
+
+from{
+
+transform:translate(0,0);
+
+}
+
+to{
+
+transform:translate(160px,90px);
+
+}
+
+}
+
+@keyframes move2{
+
+from{
+
+transform:translate(0,0);
+
+}
+
+to{
+
+transform:translate(-180px,-120px);
+
+}
+
+}
+
+nav{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+
+padding:25px 10%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:rgba(10,10,20,.45);
+
+backdrop-filter:blur(18px);
+
+z-index:999;
+
+}
+
+.logo{
+
+font-size:30px;
+
+font-weight:900;
+
+letter-spacing:3px;
+
+color:#fff;
+
+text-shadow:0 0 18px #7d2cff;
+
+}
+
+.menu{
+
+display:flex;
+
+gap:20px;
+
+}
+
+.menu a{
+
+text-decoration:none;
+
+color:white;
+
+transition:.3s;
+
+font-size:15px;
+
+}
+
+.menu a:hover{
+
+color:#8f4fff;
+
+}
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:120px 10%;
+
+gap:70px;
+
+flex-wrap:wrap;
+
+}
+
+.left{
+
+max-width:520px;
+
+animation:fadeUp 1.2s;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(70px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.small{
+
+color:#9e9e9e;
+
+letter-spacing:4px;
+
+font-size:14px;
+
+margin-bottom:20px;
+
+}
+
+h1{
+
+font-size:75px;
+
+font-weight:900;
+
+line-height:1;
+
+margin-bottom:18px;
+
+}
+
+.glow{
+
+color:#b348ff;
+
+text-shadow:
+
+0 0 20px #8f4fff,
+
+0 0 60px #8f4fff;
+
+}
+
+.desc{
+
+font-size:20px;
+
+color:#bdbdbd;
+
+line-height:1.8;
+
+margin-top:25px;
+
+}.right{
+
+position:relative;
+
+animation:float 6s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+
+}
+
+.right img{
+
+width:380px;
+max-width:90vw;
+
+border-radius:30px;
+
+border:3px solid #7d2cff;
+
+box-shadow:
+
+0 0 20px #7d2cff,
+
+0 0 70px rgba(125,44,255,.5);
+
+transition:.4s;
+
+}
+
+.right img:hover{
+
+transform:scale(1.03);
+
+box-shadow:
+
+0 0 40px #7d2cff,
+
+0 0 120px #7d2cff;
+
+}
+
+.buttons{
+
+display:flex;
+
+gap:18px;
+
+margin-top:40px;
+
+flex-wrap:wrap;
+
+}
+
+.btn{
+
+padding:18px 35px;
+
+border-radius:18px;
+
+text-decoration:none;
+
+font-weight:700;
+
+transition:.35s;
+
+}
+
+.instagram{
+
+background:linear-gradient(45deg,#ff0066,#8f4fff);
+
+color:white;
+
+box-shadow:0 0 35px rgba(143,79,255,.5);
+
+}
+
+.telegram{
+
+background:#00bfff;
+
+color:#000;
+
+box-shadow:0 0 35px rgba(0,191,255,.5);
+
+}
+
+.btn:hover{
+
+transform:translateY(-6px);
+
+}
+
+.social{
+
+margin-top:30px;
+
+display:flex;
+
+gap:25px;
+
+font-size:18px;
+
+color:#bfbfbf;
+
+}
+
+.social span{
+
+color:#8f4fff;
+
+font-weight:700;
+
+}
+
+footer{
+
+padding:40px;
+
+text-align:center;
+
+color:#888;
+
+font-size:14px;
+
+}
+
+@media(max-width:900px){
+
+.hero{
+
+flex-direction:column-reverse;
+
+text-align:center;
+
+}
+
+h1{
+
+font-size:52px;
+
+}
+
+.desc{
+
+font-size:18px;
+
+}
+
+.buttons{
+
+justify-content:center;
+
+}
+
+.social{
+
+justify-content:center;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+
+AMIR
+
+</div>
+
+<div class="menu">
+
+<a href="#">HOME</a>
+
+<a href="#">SOCIAL</a>
+
+<a href="#">CONTACT</a>
+
+</div>
+
+</nav>
+
+<section class="hero">
+
+<div class="left">
+
+<div class="small">
+
+WELCOME TO MY WORLD
+
+</div>
+
+<h1>
+
+I DON'T CHASE.
+
+<br>
+
+<span class="glow">
+
+I ATTRACT.
+
+</span>
+
+</h1>
+
+<p class="desc">
+
+Confidence isn't loud.<br>
+
+It's unforgettable.
+
+</p><div class="buttons">
+
+<a class="btn instagram"
+href="https://instagram.com/amirr_m87311"
+target="_blank">
+
+📷 Instagram
+
+</a>
+
+<a class="btn telegram"
+href="https://t.me/amirr_m87311"
+target="_blank">
+
+✈ Telegram
+
+</a>
+
+</div>
+
+<div class="social">
+
+<div>
+
+Instagram
+
+<br>
+
+<span>@amirr_m87311</span>
+
+</div>
+
+<div>
+
+Telegram
+
+<br>
+
+<span>@amirr_m87311</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="right">
+
+<img src="me.jpg" alt="AMIR">
+
+</div>
+
+</section>
+
+<section style="padding:120px 10%;text-align:center;">
+
+<h2 style="font-size:55px;font-weight:900;">
+
+Stay Rare.
+
+</h2>
+
+<p style="margin-top:25px;
+font-size:22px;
+color:#bbb;
+line-height:2;">
+
+The strongest impression doesn't come from saying everything.
+
+<br>
+
+It comes from leaving something to imagine.
+
+</p>
+
+</section>
+
+<section style="padding:80px 10%;display:flex;justify-content:center;flex-wrap:wrap;gap:30px;">
+
+<div style="width:280px;background:#10131b;border:1px solid #2b2b40;border-radius:25px;padding:35px;box-shadow:0 0 35px rgba(125,44,255,.15);">
+
+<h3 style="font-size:28px;margin-bottom:15px;color:#9d62ff;">
+
+STYLE
+
+</h3>
+
+<p style="color:#bbb;line-height:1.8;">
+
+Simple.
+
+Modern.
+
+Different.
+
+</p>
+
+</div>
+
+<div style="width:280px;background:#10131b;border:1px solid #2b2b40;border-radius:25px;padding:35px;box-shadow:0 0 35px rgba(0,191,255,.15);">
+
+<h3 style="font-size:28px;margin-bottom:15px;color:#00c8ff;">
+
+VISION
+
+</h3>
+
+<p style="color:#bbb;line-height:1.8;">
+
+Quality over quantity.
+
+Always.
+
+</p>
+
+</div>
+
+<div style="width:280px;background:#10131b;border:1px solid #2b2b40;border-radius:25px;padding:35px;box-shadow:0 0 35px rgba(125,44,255,.15);">
+
+<h3 style="font-size:28px;margin-bottom:15px;color:#9d62ff;">
+
+CONNECT
+
+</h3>
+
+<p style="color:#bbb;line-height:1.8;">
+
+Find me on Instagram
+
+or Telegram.
+
+</p>
+
+</div>
+
+</section><section style="padding:100px 10%;text-align:center;">
+
+<h2 style="
+font-size:50px;
+font-weight:900;
+margin-bottom:30px;
+">
+
+FOLLOW THE VIBE
+
+</h2>
+
+<p style="
+color:#9f9f9f;
+font-size:20px;
+max-width:700px;
+margin:auto;
+line-height:2;
+">
+
+Everything starts with one click.
+
+Choose your platform and say hello.
+
+</p>
+
+<div class="buttons" style="justify-content:center;margin-top:60px;">
+
+<a class="btn instagram"
+href="https://instagram.com/amirr_m87311"
+target="_blank">
+
+Instagram
+
+</a>
+
+<a class="btn telegram"
+href="https://t.me/amirr_m87311"
+target="_blank">
+
+Telegram
+
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 • AMIR
+
+</footer>
+
+<script>
+
+const cards=document.querySelectorAll("div");
+
+window.addEventListener("scroll",()=>{
+
+cards.forEach(card=>{
+
+const top=card.getBoundingClientRect().top;
+
+if(top<window.innerHeight-80){
+
+card.style.opacity="1";
+
+card.style.transform="translateY(0px)";
+
+}
+
+});
+
+});
+
+cards.forEach(card=>{
+
+card.style.opacity="0";
+
+card.style.transform="translateY(50px)";
+
+card.style.transition=".8s";
+
+});
+
+</script>
+
+</body>
+
+</html>
